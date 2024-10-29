@@ -24,6 +24,7 @@ public class EventCreate {
             energy = 100;
         }
         fox.setEnergy(energy);
+        checkEnergy(fox);
         System.out.println("Лиса поспала. + 20 энергии.");
     }
 
@@ -40,6 +41,7 @@ public class EventCreate {
         }
         fox.setEnergy(energy);
         fox.setHealth(health);
+        checkEnergy(fox);
         System.out.println("Лиса поймала полевую мышь! Довольно сытный перекус! - 3 энергии, + " + (fox.getJawEnergyProduction() * 2) + " здоровья.");
     }
 
@@ -56,6 +58,7 @@ public class EventCreate {
         }
         fox.setEnergy(energy);
         fox.setHealth(health);
+        checkEnergy(fox);
         System.out.println("Охота на зайца прошла успешно! Большая добыча! - 9 энергии, + " + (fox.getJawEnergyProduction() * 8) + " здоровья.");
     }
 
@@ -72,6 +75,7 @@ public class EventCreate {
         }
         fox.setEnergy(energy);
         fox.setHealth(health);
+        checkEnergy(fox);
         System.out.println("Недалеко замечена ферма. Удалось пробраться и украсть небольшую курицу! Время подкрепиться! - 10 энергии, + " + (fox.getJawEnergyProduction() * 4) + " здоровья.");
     }
 
@@ -82,6 +86,7 @@ public class EventCreate {
             energy = 0;
         }
         fox.setEnergy(energy);
+        checkEnergy(fox);
         System.out.println("Лиса вырыла себе нору. - 15 энергии.");
     }
 
@@ -92,6 +97,7 @@ public class EventCreate {
             energy = 0;
         }
         fox.setEnergy(energy);
+        checkEnergy(fox);
         System.out.println("Почуяла врага! Пришлось много бегать, чтобы запутать след. - 7 энергии");
     }
 
@@ -102,6 +108,7 @@ public class EventCreate {
             health = 0;
         }
         fox.setHealth(health);
+        checkEnergy(fox);
         System.out.println("На лису напал волк! - 20 здоровья.");
     }
 
@@ -112,6 +119,7 @@ public class EventCreate {
             health = 0;
         }
         fox.setHealth(health);
+        checkEnergy(fox);
         System.out.println("Лису заметил охотник и подстрелил ее! - 15 здоровья.");
     }
 
@@ -122,6 +130,7 @@ public class EventCreate {
             energy = 100;
         }
         fox.setEnergy(energy);
+        checkEnergy(fox);
         System.out.println("Выглянуло солнце! Можно поваляться в поле и отдохнуть. + 15 энергии.");
     }
 
@@ -132,7 +141,21 @@ public class EventCreate {
             energy = 0;
         }
         fox.setEnergy(energy);
+        checkEnergy(fox);
         System.out.println("Лиса отправилась на охоту, но она оказалась безуспешной. - 12 энергии.");
     }
+
+    private void checkEnergy(Fox fox) {
+        if (fox.getEnergy() <= 0) {
+            int healht = fox.getHealth();
+            healht = healht - 5;
+            if (healht < 0) {
+                healht = 0;
+            }
+            fox.setHealth(healht);
+        }
+    }
+
+
 
 }
