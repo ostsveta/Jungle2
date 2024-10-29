@@ -59,6 +59,21 @@ public class EventCreate {
         System.out.println("Охота на зайца прошла успешно! Большая добыча! - 9 энергии, + " + (fox.getJawEnergyProduction() * 8) + " здоровья.");
     }
 
+    private void eatChickenEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        int health = fox.getHealth();
+        energy = energy - 10;
+        if (energy <= 0) {
+            energy = 0;
+        }
+        health = health + fox.getJawEnergyProduction() * 4;
+        if (health > 100) {
+            health = 100;
+        }
+        fox.setEnergy(energy);
+        fox.setHealth(health);
+        System.out.println("Недалеко замечена ферма. Удалось пробраться и украсть небольшую курицу! Время подкрепиться! - 10 энергии, + " + (fox.getJawEnergyProduction() * 4) + " здоровья.");
+    }
 
 
 }
