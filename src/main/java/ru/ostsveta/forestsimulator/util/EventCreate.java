@@ -156,6 +156,13 @@ public class EventCreate {
         }
     }
 
-
+    private boolean checkStatus(Fox fox) {
+        System.out.println("hp: " + fox.getHealth() + ", energy: " + fox.getEnergy());
+        if (fox.getHealth() <= 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 }
