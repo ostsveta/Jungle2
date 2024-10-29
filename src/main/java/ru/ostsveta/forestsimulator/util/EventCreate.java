@@ -95,6 +95,15 @@ public class EventCreate {
         System.out.println("Почуяла врага! Пришлось много бегать, чтобы запутать след. - 7 энергии");
     }
 
+    private void wolfAttackEvent (Fox fox) {
+        int health = fox.getHealth();
+        health = health - 20;
+        if (health <= 0) {
+            health = 0;
+        }
+        fox.setHealth(health);
+        System.out.println("На лису напал волк! - 20 здоровья.");
+    }
 
 
 }
