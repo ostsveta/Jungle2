@@ -105,5 +105,17 @@ public class EventCreate {
         System.out.println("На лису напал волк! - 20 здоровья.");
     }
 
+    private void hunterAttackEvent (Fox fox) {
+        int health = fox.getHealth();
+        health = health - 15;
+        if (health <= 0) {
+            health = 0;
+        }
+        fox.setHealth(health);
+        System.out.println("Лису заметил охотник и подстрелил ее! - 15 здоровья.");
+    }
+
+
+
 
 }
