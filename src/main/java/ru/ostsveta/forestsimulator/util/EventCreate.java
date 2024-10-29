@@ -31,7 +31,7 @@ public class EventCreate {
         int energy = fox.getEnergy();
         int health = fox.getHealth();
         energy = energy - 3;
-        if (energy <= 0) {
+        if (energy < 0) {
             energy = 0;
         }
         health = health + fox.getJawEnergyProduction() * 2;
@@ -47,7 +47,7 @@ public class EventCreate {
         int energy = fox.getEnergy();
         int health = fox.getHealth();
         energy = energy - 9;
-        if (energy <= 0) {
+        if (energy < 0) {
             energy = 0;
         }
         health = health + fox.getJawEnergyProduction() * 8;
@@ -63,7 +63,7 @@ public class EventCreate {
         int energy = fox.getEnergy();
         int health = fox.getHealth();
         energy = energy - 10;
-        if (energy <= 0) {
+        if (energy < 0) {
             energy = 0;
         }
         health = health + fox.getJawEnergyProduction() * 4;
@@ -78,7 +78,7 @@ public class EventCreate {
     private void digsBurrowEvent (Fox fox) {
         int energy = fox.getEnergy();
         energy = energy - 15;
-        if (energy <= 0) {
+        if (energy < 0) {
             energy = 0;
         }
         fox.setEnergy(energy);
@@ -88,7 +88,7 @@ public class EventCreate {
     private void runEvent (Fox fox) {
         int energy = fox.getEnergy();
         energy = energy - 7;
-        if (energy <= 0) {
+        if (energy < 0) {
             energy = 0;
         }
         fox.setEnergy(energy);
@@ -98,7 +98,7 @@ public class EventCreate {
     private void wolfAttackEvent (Fox fox) {
         int health = fox.getHealth();
         health = health - 20;
-        if (health <= 0) {
+        if (health < 0) {
             health = 0;
         }
         fox.setHealth(health);
@@ -108,14 +108,22 @@ public class EventCreate {
     private void hunterAttackEvent (Fox fox) {
         int health = fox.getHealth();
         health = health - 15;
-        if (health <= 0) {
+        if (health < 0) {
             health = 0;
         }
         fox.setHealth(health);
         System.out.println("Лису заметил охотник и подстрелил ее! - 15 здоровья.");
     }
 
-
+    private void sunLyingEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        energy = energy + 15;
+        if (energy > 100) {
+            energy = 100;
+        }
+        fox.setEnergy(energy);
+        System.out.println("Выглянуло солнце! Можно поваляться в поле и отдохнуть. + 15 энергии.");
+    }
 
 
 }
