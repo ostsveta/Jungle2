@@ -75,5 +75,13 @@ public class EventCreate {
         System.out.println("Недалеко замечена ферма. Удалось пробраться и украсть небольшую курицу! Время подкрепиться! - 10 энергии, + " + (fox.getJawEnergyProduction() * 4) + " здоровья.");
     }
 
-
+    private void digsBurrowEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        energy = energy - 15;
+        if (energy <= 0) {
+            energy = 0;
+        }
+        fox.setEnergy(energy);
+        System.out.println("Лиса вырыла себе нору. - 15 энергии.");
+    }
 }
