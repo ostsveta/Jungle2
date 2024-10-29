@@ -43,4 +43,22 @@ public class EventCreate {
         System.out.println("Лиса поймала полевую мышь! Довольно сытный перекус! - 3 энергии, + " + (fox.getJawEnergyProduction() * 2) + " здоровья.");
     }
 
+    private void eatBunnyEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        int health = fox.getHealth();
+        energy = energy - 9;
+        if (energy <= 0) {
+            energy = 0;
+        }
+        health = health + fox.getJawEnergyProduction() * 8;
+        if (health > 100) {
+            health = 100;
+        }
+        fox.setEnergy(energy);
+        fox.setHealth(health);
+        System.out.println("Охота на зайца прошла успешно! Большая добыча! - 9 энергии, + " + (fox.getJawEnergyProduction() * 8) + " здоровья.");
+    }
+
+
+
 }
