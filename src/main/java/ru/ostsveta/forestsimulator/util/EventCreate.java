@@ -27,4 +27,20 @@ public class EventCreate {
         System.out.println("Лиса поспала. + 20 энергии.");
     }
 
+    private void eatMouseEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        int health = fox.getHealth();
+        energy = energy - 3;
+        if (energy <= 0) {
+            energy = 0;
+        }
+        health = health + fox.getJawEnergyProduction() * 2;
+        if (health > 100) {
+            health = 100;
+        }
+        fox.setEnergy(energy);
+        fox.setHealth(health);
+        System.out.println("Лиса поймала полевую мышь! Довольно сытный перекус! - 3 энергии, + " + (fox.getJawEnergyProduction() * 2) + " здоровья.");
+    }
+
 }
