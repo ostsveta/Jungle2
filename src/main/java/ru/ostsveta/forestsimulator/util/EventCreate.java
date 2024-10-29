@@ -84,4 +84,17 @@ public class EventCreate {
         fox.setEnergy(energy);
         System.out.println("Лиса вырыла себе нору. - 15 энергии.");
     }
+
+    private void runEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        energy = energy - 7;
+        if (energy <= 0) {
+            energy = 0;
+        }
+        fox.setEnergy(energy);
+        System.out.println("Почуяла врага! Пришлось много бегать, чтобы запутать след. - 7 энергии");
+    }
+
+
+
 }
