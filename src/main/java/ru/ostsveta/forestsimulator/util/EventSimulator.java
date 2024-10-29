@@ -2,7 +2,7 @@ package ru.ostsveta.forestsimulator.util;
 
 import ru.ostsveta.forestsimulator.model.Fox;
 
-public class EventCreate {
+public class EventSimulator {
 
     // Лиса поспала. + 10 энергии
     // Лиса съела мышь. - 15 энергии; + (коэфф * 2 здоровья)
