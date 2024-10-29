@@ -125,5 +125,14 @@ public class EventCreate {
         System.out.println("Выглянуло солнце! Можно поваляться в поле и отдохнуть. + 15 энергии.");
     }
 
+    private void badHuntEvent (Fox fox) {
+        int energy = fox.getEnergy();
+        energy = energy - 12;
+        if (energy < 0) {
+            energy = 0;
+        }
+        fox.setEnergy(energy);
+        System.out.println("Лиса отправилась на охоту, но она оказалась безуспешной. - 12 энергии.");
+    }
 
 }
