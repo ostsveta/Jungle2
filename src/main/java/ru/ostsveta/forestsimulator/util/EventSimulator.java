@@ -69,14 +69,14 @@ public class EventSimulator {
         if (energy < 0) {
             energy = 0;
         }
-        health = health + fox.getJawEnergyProduction() * 2;
+        health = health + (fox.JAW_ENERGY_PRODUCTION * 2);
         if (health > 100) {
             health = 100;
         }
         fox.setEnergy(energy);
         fox.setHealth(health);
         checkEnergy(fox);
-        System.out.println("Лиса поймала полевую мышь! Довольно сытный перекус! - 15 энергии, + " + (fox.getJawEnergyProduction() * 2) + " здоровья.");
+        System.out.println("Лиса поймала полевую мышь! Довольно сытный перекус! - 15 энергии, + " + (fox.JAW_ENERGY_PRODUCTION * 2) + " здоровья.");
     }
 
     private void eatBunnyEvent(Fox fox) {
@@ -86,14 +86,14 @@ public class EventSimulator {
         if (energy < 0) {
             energy = 0;
         }
-        health = health + fox.getJawEnergyProduction() * 5;
+        health = health + (fox.JAW_ENERGY_PRODUCTION * 5);
         if (health > 100) {
             health = 100;
         }
         fox.setEnergy(energy);
         fox.setHealth(health);
         checkEnergy(fox);
-        System.out.println("Охота на зайца прошла успешно! Большая добыча! - 19 энергии, + " + (fox.getJawEnergyProduction() * 5) + " здоровья.");
+        System.out.println("Охота на зайца прошла успешно! Большая добыча! - 19 энергии, + " + (fox.JAW_ENERGY_PRODUCTION * 5) + " здоровья.");
     }
 
     private void eatChickenEvent(Fox fox) {
@@ -103,14 +103,14 @@ public class EventSimulator {
         if (energy < 0) {
             energy = 0;
         }
-        health = health + fox.getJawEnergyProduction() * 3;
+        health = health + (fox.JAW_ENERGY_PRODUCTION * 3);
         if (health > 100) {
             health = 100;
         }
         fox.setEnergy(energy);
         fox.setHealth(health);
         checkEnergy(fox);
-        System.out.println("Недалеко замечена ферма. Удалось пробраться и украсть небольшую курицу! Время подкрепиться! - 17 энергии, + " + (fox.getJawEnergyProduction() * 3) + " здоровья.");
+        System.out.println("Недалеко замечена ферма. Удалось пробраться и украсть небольшую курицу! Время подкрепиться! - 17 энергии, + " + (fox.JAW_ENERGY_PRODUCTION * 3) + " здоровья.");
     }
 
     private void digsBurrowEvent(Fox fox) {

@@ -4,7 +4,7 @@ public class Fox {
 
     private int energy = 100;
     private int health = 100;
-    private int jawEnergyProduction = 2;
+    public static final int JAW_ENERGY_PRODUCTION = 2;
 
     public void setEnergy(int energy) {
         this.energy = energy;
@@ -20,9 +20,5 @@ public class Fox {
 
     public int getHealth() {
         return this.health;
-    }
-
-    public int getJawEnergyProduction() {
-        return this.jawEnergyProduction;
     }
 }
